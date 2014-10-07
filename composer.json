@@ -1,6 +1,5 @@
 {
 	"name": "opus-online/yii2-ecom",
-	"version": "1.0.0-alpha2",
 	"description": "E-commerce extension for Yii2",
 	"minimum-stability": "dev",
 	"type": "yii2-extension",
@@ -13,8 +12,8 @@
 	],
 	"require": {
 		"php": ">=5.4.0",
-		"yiisoft/yii2": "dev-master@dev",
-		"opus-online/yii2-payment": "1.0-alpha2"
+		"yiisoft/yii2": "*",
+		"opus-online/yii2-payment": "1.0.x"
 	},
 	"autoload": {
 		"psr-4": {

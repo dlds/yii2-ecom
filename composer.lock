@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "769831905846cb534a8a938ee6fb44c4",
+    "hash": "2cdb9edcd0aebcc21d8732e40c948e2e",
     "packages": [
         {
             "name": "bower-asset/jquery",
@@ -261,20 +261,20 @@
         },
         {
             "name": "opus-online/yii2-payment",
-            "version": "1.0-alpha2",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opus-online/yii2-payment.git",
-                "reference": "6cb1664be5dc263b2fed4afada9867ae8ed367f4"
+                "reference": "f4f0d314bc2a9f5a10124cc97f43fca0a0c351f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opus-online/yii2-payment/zipball/6cb1664be5dc263b2fed4afada9867ae8ed367f4",
-                "reference": "6cb1664be5dc263b2fed4afada9867ae8ed367f4",
+                "url": "https://api.github.com/repos/opus-online/yii2-payment/zipball/f4f0d314bc2a9f5a10124cc97f43fca0a0c351f3",
+                "reference": "f4f0d314bc2a9f5a10124cc97f43fca0a0c351f3",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "dev-master@dev"
+                "yiisoft/yii2": "*"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -293,7 +293,7 @@
                 }
             ],
             "description": "Library to handle payments with Estonian banks",
-            "time": "2014-05-14 08:41:49"
+            "time": "2014-10-07 11:41:39"
         },
         {
             "name": "yiisoft/yii2",
@@ -431,15 +431,21 @@
             "time": "2014-09-28 05:44:31"
         }
     ],
-    "packages-dev": [],
-    "aliases": [],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "yiisoft/yii2": 20
-    },
+    "stability-flags": [
+
+    ],
     "prefer-stable": false,
     "platform": {
         "php": ">=5.4.0"
     },
-    "platform-dev": []
+    "platform-dev": [
+
+    ]
 }
