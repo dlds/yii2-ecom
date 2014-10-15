@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "29fbe1e4cc6f78710a784ee27ff1bcb7",
+    "hash": "3b624b300645182d38807c9450831d03",
     "packages": [
         {
             "name": "bower-asset/jquery",
@@ -261,20 +261,20 @@
         },
         {
             "name": "opus-online/yii2-payment",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opus-online/yii2-payment.git",
-                "reference": "f4f0d314bc2a9f5a10124cc97f43fca0a0c351f3"
+                "reference": "f47861d2dffec0c361d988d4fed0f7bf0256ed68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opus-online/yii2-payment/zipball/f4f0d314bc2a9f5a10124cc97f43fca0a0c351f3",
-                "reference": "f4f0d314bc2a9f5a10124cc97f43fca0a0c351f3",
+                "url": "https://api.github.com/repos/opus-online/yii2-payment/zipball/f47861d2dffec0c361d988d4fed0f7bf0256ed68",
+                "reference": "f47861d2dffec0c361d988d4fed0f7bf0256ed68",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "*"
+                "yiisoft/yii2": "dev-master@dev"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -293,7 +293,7 @@
                 }
             ],
             "description": "Library to handle payments with Estonian banks",
-            "time": "2014-10-07 11:41:39"
+            "time": "2014-10-15 15:00:20"
         },
         {
             "name": "yiisoft/yii2",
