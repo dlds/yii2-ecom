@@ -13,7 +13,7 @@
 	"require": {
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",
-		"opus-online/yii2-payment": "1.0.x"
+		"opus-online/yii2-payment": "~1.0.0"
 	},
 	"autoload": {
 		"psr-4": {
