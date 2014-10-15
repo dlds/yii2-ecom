@@ -45,6 +45,10 @@ class Payment extends PaymentHandlerBase
      */
     public $bankReturnRoute;
     /**
+     * @var array Shorthand configuration param for return URL. Will override $this->params['common']['returnRoute']
+     */
+    public $bankCancelRoute;
+    /**
      * @var array Shorthand configuration param for adapters. Will override $this->params['adapters']
      */
     public $adapterConfig;
@@ -60,6 +64,7 @@ class Payment extends PaymentHandlerBase
     {
         $params = $this->params;
         isset($this->bankReturnRoute) && $params['common']['returnRoute'] = $this->bankReturnRoute;
+        isset($this->bankCancelRoute) && $params['common']['cancelRoute'] = $this->bankCancelRoute;
         isset($this->adapterConfig) && $params['adapters'] = $this->adapterConfig;
 
         return $params;
