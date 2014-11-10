@@ -63,11 +63,11 @@ class Database extends Object implements StorageInterface
     /**
      * @var Connection
      */
-    private $db;
+    protected $db;
     /**
      * @var User
      */
-    private $user;
+    protected $user;
 
     /**
      * @inheritdoc
@@ -75,10 +75,10 @@ class Database extends Object implements StorageInterface
     public function init()
     {
         parent::init();
-        $this->db = \Yii::$app->getComponent($this->dbComponent);
+        $this->db = \Yii::$app->get($this->dbComponent);
 
         if (isset($this->userComponent)) {
-            $this->user = \Yii::$app->getComponent($this->userComponent);
+            $this->user = \Yii::$app->get($this->userComponent);
         }
 
         if (!isset($this->table)) {
