@@ -5,11 +5,11 @@
  * @date 23.01.14
  */
 
-namespace opus\ecom;
+namespace dlds\shop;
 
-use opus\ecom\models\BasketDiscountInterface;
-use opus\ecom\models\BasketItemInterface;
-use opus\ecom\models\OrderInterface;
+use dlds\shop\models\BasketDiscountInterface;
+use dlds\shop\models\BasketItemInterface;
+use dlds\shop\models\OrderInterface;
 use yii\base\InvalidParamException;
 use yii\web\Session;
 
@@ -18,15 +18,15 @@ use yii\web\Session;
  * override it in the application configuration to extend/customize the functionality
  *
  * @author Ivo Kund <ivo@opus.ee>
- * @package opus\ecom
+ * @package dlds\shop
  *
  * @property int $count
  * @property Session $session
  */
 class Basket extends Component
 {
-    const ITEM_PRODUCT = '\opus\ecom\models\BasketProductInterface';
-    const ITEM_DISCOUNT = '\opus\ecom\models\BasketDiscountInterface';
+    const ITEM_PRODUCT = '\dlds\shop\models\BasketProductInterface';
+    const ITEM_DISCOUNT = '\dlds\shop\models\BasketDiscountInterface';
 
     use SubComponentTrait;
 
@@ -42,9 +42,9 @@ class Basket extends Component
     /**
      * Override this to provide custom (e.g. database) storage for basket data
      *
-     * @var string|\opus\ecom\basket\StorageInterface
+     * @var string|\dlds\shop\basket\StorageInterface
      */
-    private $storage = 'opus\ecom\basket\storage\Session';
+    private $storage = 'dlds\shop\basket\storage\Session';
 
     /**
      * @inheritdoc
@@ -73,7 +73,7 @@ class Basket extends Component
     /**
      * Setter for the storage component
      *
-     * @param \opus\ecom\basket\StorageInterface|string $storage
+     * @param \dlds\shop\basket\StorageInterface|string $storage
      * @return Basket
      */
     public function setStorage($storage)
@@ -87,7 +87,7 @@ class Basket extends Component
      *
      * @param OrderInterface $order
      * @param bool $clear
-     * @return \opus\ecom\models\OrderInterface
+     * @return \dlds\shop\models\OrderInterface
      * @throws \Exception
      */
     public function createOrder(OrderInterface $order, $clear = true)
@@ -116,7 +116,7 @@ class Basket extends Component
     }
 
     /**
-     * @param \opus\ecom\models\BasketItemInterface $item
+     * @param \dlds\shop\models\BasketItemInterface $item
      * @internal param $quantity
      */
     protected function addItem(BasketItemInterface $item)
@@ -245,7 +245,7 @@ class Basket extends Component
     }
 
     /**
-     * @return \opus\ecom\basket\StorageInterface|string
+     * @return \dlds\shop\basket\StorageInterface|string
      */
     protected function getStorage()
     {

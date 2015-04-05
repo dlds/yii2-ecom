@@ -5,7 +5,7 @@
  * @date 27.01.14
  */
 
-namespace opus\ecom\assets;
+namespace dlds\shop\assets;
 
 use Yii;
 use yii\web\AssetBundle;
@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
  * Class PayAssetBundle
  *
  * @author Ivo Kund <ivo@opus.ee>
- * @package opus\ecom\assets
+ * @package dlds\shop\assets
  */
 class PayAssetBundle extends AssetBundle
 {

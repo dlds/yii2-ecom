@@ -5,16 +5,16 @@
  * @date 23.01.14
  */
 
-namespace opus\ecom\basket\storage;
+namespace dlds\shop\basket\storage;
 
-use opus\ecom\Basket;
-use opus\ecom\basket\StorageInterface;
+use dlds\shop\Basket;
+use dlds\shop\basket\StorageInterface;
 
 /**
  * Class SessionStorage
  *
  * @author Ivo Kund <ivo@opus.ee>
- * @package opus\ecom\basket
+ * @package dlds\shop\basket
  */
 class Session implements StorageInterface
 {

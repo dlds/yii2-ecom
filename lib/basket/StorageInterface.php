@@ -5,14 +5,14 @@
  * @date 23.01.14
  */
 
-namespace opus\ecom\basket;
+namespace dlds\shop\basket;
 
-use opus\ecom\Basket;
+use dlds\shop\Basket;
 
 /**
  * Interface StorageInterface
  *
- * @package opus\ecom\basket
+ * @package dlds\shop\basket
  */
 interface StorageInterface
 {
@@ -23,7 +23,7 @@ interface StorageInterface
     public function load(Basket $basket);
 
     /**
-     * @param \opus\ecom\Basket $basket
+     * @param \dlds\shop\Basket $basket
      * @return void
      */
     public function save(Basket $basket);

@@ -5,14 +5,14 @@
  * @date 23.01.14
  */
 
-namespace opus\ecom\models;
+namespace dlds\shop\models;
 
-use opus\ecom\Basket;
+use dlds\shop\Basket;
 
 /**
  * All 'purchasable' objects that can be added to the basket must implement this interface.
  *
- * @package opus\ecom\models
+ * @package dlds\shop\models
  */
 interface BasketProductInterface extends BasketItemInterface
 {

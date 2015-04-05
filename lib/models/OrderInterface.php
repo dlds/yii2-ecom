@@ -5,16 +5,16 @@
  * @date 24.01.14
  */
 
-namespace opus\ecom\models;
+namespace dlds\shop\models;
 
-use opus\ecom\Basket;
+use dlds\shop\Basket;
 use opus\payment\services\payment\Response;
 
 /**
  * Any object that represents an order and is to be used in conjunction with the Basket object, should implement this interface.
  *
  * @author Ivo Kund <ivo@opus.ee>
- * @package opus\ecom\models
+ * @package dlds\shop\models
  */
 interface OrderInterface
 {

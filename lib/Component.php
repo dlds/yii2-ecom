@@ -5,13 +5,13 @@
  * @date 23.01.14
  */
 
-namespace opus\ecom;
+namespace dlds\shop;
 
-use opus\ecom\models\OrderInterface;
+use dlds\shop\models\OrderInterface;
 use opus\payment\services\payment\Transaction;
 
 /**
- * This is the main class of the opus\ecom component that should be registered as an application component.
+ * This is the main class of the dlds\shop component that should be registered as an application component.
  *
  * @author Ivo Kund <ivo@opus.ee>
  * @package ecom
@@ -21,23 +21,23 @@ class Component extends \yii\base\Component
     /**
      * Override to customize your basket object
      *
-     * @var string|\opus\ecom\Basket
+     * @var string|\dlds\shop\Basket
      */
-    public $basket = '\opus\ecom\Basket';
+    public $basket = '\dlds\shop\Basket';
 
     /**
      * Override to customize the formatter
      *
-     * @var string|\opus\ecom\Formatter
+     * @var string|\dlds\shop\Formatter
      */
-    public $formatter = '\opus\ecom\Formatter';
+    public $formatter = '\dlds\shop\Formatter';
 
     /**
      * Override to to customize payment-related functionality
      *
-     * @var string|\opus\ecom\Payment
+     * @var string|\dlds\shop\Payment
      */
-    public $payment = '\opus\ecom\Payment';
+    public $payment = '\dlds\shop\Payment';
 
     /**
      * @inheritdoc

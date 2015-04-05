@@ -5,10 +5,10 @@
  * @date 31.01.14
  */
 
-namespace opus\ecom\basket\storage;
+namespace dlds\shop\basket\storage;
 
-use opus\ecom\basket\StorageInterface;
-use opus\ecom\Basket;
+use dlds\shop\basket\StorageInterface;
+use dlds\shop\Basket;
 use yii\base\InvalidConfigException;
 use yii\base\Object;
 use yii\db\Connection;
@@ -27,7 +27,7 @@ use yii\web\User;
  * fails, or if $userComponent is not set, it will use session_id as user identifier
  *
  * @author Ivo Kund <ivo@opus.ee>
- * @package opus\ecom\basket\storage
+ * @package dlds\shop\basket\storage
  */
 class Database extends Object implements StorageInterface
 {
@@ -122,7 +122,7 @@ class Database extends Object implements StorageInterface
     }
 
     /**
-     * @param \opus\ecom\Basket $basket
+     * @param \dlds\shop\Basket $basket
      * @return void
      */
     public function save(Basket $basket)
