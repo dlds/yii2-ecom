@@ -23,7 +23,7 @@ You can install this package using composer. In your `composer.json` add the fol
 ```
 Technical overview
 ------------------
-The package lives under `\dlds\shop` namespace and consists of 3 sub-components (these can be overridden in configuration and are directly accessible as properties of the main component).
+The package lives under `\dlds\ecom` namespace and consists of 3 sub-components (these can be overridden in configuration and are directly accessible as properties of the main component).
 
 1. **basket** - provides shopping basket functionality
 2. **payment** - provides functionality for receiving payments
@@ -46,7 +46,7 @@ $config = [
         'ecom' => [
             'class' => 'app\components\MyEcomComponent',
             'payment' => [
-                'class' => 'dlds\shop\Payment',
+                'class' => 'dlds\ecom\Payment',
                 'bankReturnRoute' => 'bankret', // use url alias to shorten the return url
                 'adapterConfig' => \yii\helpers\ArrayHelper::merge(require 'banks-default.php', require 'banks-local.php')
             ],
@@ -58,7 +58,7 @@ And define the class `MyEcomComponent` like this:
 ```php
 namespace app\components;
 
-class MyEcomComponent extends \dlds\shop\Component
+class MyEcomComponent extends \dlds\ecom\Component
 {
   // override methods here to customize
 }
@@ -70,15 +70,15 @@ the example files from [here](http://demo.opus.ee/projects/ecom/sample-keys.zip)
 
 Usage
 --------------
-The following examples assume that you have registered `dlds\shop\Component` (or its child class) as an application component under `Yii::$app->ecom`.
+The following examples assume that you have registered `dlds\ecom\Component` (or its child class) as an application component under `Yii::$app->ecom`.
 
 ### Using ActiveRecord integration
 ActiveRecord integration makes it very easy to add items to shopping basket and to use the basket to create orders and
 payment forms. Currently there are three kinds of AR integration available.
 
-1. Implement `dlds\shop\models\BasketProductInterface` in your AR model class to add support for products and services
-2. Implement `dlds\shop\models\BasketDiscountInterface` to add support for discounts
-3. Implement `dlds\shop\models\OrderInterface` to add support for orders
+1. Implement `dlds\ecom\models\BasketProductInterface` in your AR model class to add support for products and services
+2. Implement `dlds\ecom\models\BasketDiscountInterface` to add support for discounts
+3. Implement `dlds\ecom\models\OrderInterface` to add support for orders
 
 
 ### Using the shopping basket
@@ -107,7 +107,7 @@ $totalVat = $basket->getAttributeTotal('vat');
 $basket->clear();
 
 // render the contents of the basket with default parameters
-echo \dlds\shop\widgets\BasketGridView::widget([
+echo \dlds\ecom\widgets\BasketGridView::widget([
     'basket' => $basket,
 ]);
 ```
@@ -171,7 +171,7 @@ public function saveFromBasket(Basket $basket)
 
 ### Using payments
 #### Generating payment forms
-If you have saved your Order objects, you can use the included widget `dlds\shop\widgets\PaymentButtons` to render all the bank forms included in your configuration. You can provide your own widget class in the configuration if you need customization (override `widgetClass` under `payment` sub-component). There is a shorthand method for generating the widget with correct parameters:
+If you have saved your Order objects, you can use the included widget `dlds\ecom\widgets\PaymentButtons` to render all the bank forms included in your configuration. You can provide your own widget class in the configuration if you need customization (override `widgetClass` under `payment` sub-component). There is a shorthand method for generating the widget with correct parameters:
 ```php
 // generate FORM tags for every bank with hidden inputs and bank logos as submit images
 \Yii::$app->ecom
@@ -211,9 +211,9 @@ There are two built-in adapters for storing basket data: session storage (defaul
 'ecom' => [
     'class' => 'app\components\MyEcomComponent',
     'basket' => [
-        'class' => 'dlds\shop\Basket',
+        'class' => 'dlds\ecom\Basket',
         'storage' => [
-            'class' => 'dlds\shop\basket\storage\Database',
+            'class' => 'dlds\ecom\basket\storage\Database',
             'table' => 'eco_basket',
         ]
     ],
