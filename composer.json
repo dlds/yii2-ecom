@@ -1,7 +1,6 @@
 {
     "name": "dlds/yii2-ecom",
     "description": "E-commerce extension for Yii2",
-    "minimum-stability": "dev",
     "type": "yii2-extension",
     "license": "proprietary",
     "authors": [
