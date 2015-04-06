@@ -9,19 +9,19 @@ namespace dlds\ecom;
 
 use dlds\ecom\models\OrderInterface;
 use dlds\ecom\widgets\PaymentButtons;
-use opus\payment\PaymentHandlerBase;
-use opus\payment\services\payment\Response;
-use opus\payment\services\payment\Transaction;
+use dlds\payment\PaymentHandlerBase;
+use dlds\payment\services\payment\Response;
+use dlds\payment\services\payment\Transaction;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
 /**
- * This class adds some convenience functionality to the \opus\payment component
+ * This class adds some convenience functionality to the \dlds\payment component
  *
  * @author Ivo Kund <ivo@opus.ee>
  * @package dlds\ecom
  *
- * @property \opus\payment\services\Payment $service
+ * @property \dlds\payment\services\Payment $service
  */
 class Payment extends PaymentHandlerBase
 {
@@ -53,7 +53,7 @@ class Payment extends PaymentHandlerBase
      */
     public $adapterConfig;
     /**
-     * @var \opus\payment\services\Payment
+     * @var \dlds\payment\services\Payment
      */
     private $service;
 
@@ -143,7 +143,7 @@ class Payment extends PaymentHandlerBase
     }
 
     /**
-     * @return \opus\payment\services\Payment
+     * @return \dlds\payment\services\Payment
      */
     protected function getService()
     {

@@ -8,7 +8,7 @@
 namespace dlds\ecom\models;
 
 use dlds\ecom\Basket;
-use opus\payment\services\payment\Response;
+use dlds\payment\services\payment\Response;
 
 /**
  * Any object that represents an order and is to be used in conjunction with the Basket object, should implement this interface.

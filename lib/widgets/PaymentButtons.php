@@ -10,10 +10,10 @@ namespace dlds\ecom\widgets;
 use dlds\ecom\assets\PayAssetBundle;
 use dlds\ecom\models\OrderInterface;
 use dlds\ecom\SubComponentTrait;
-use opus\payment\services\payment\Form;
-use opus\payment\services\payment\Transaction;
-use opus\payment\services\Payment;
-use opus\payment\widgets\PaymentWidget;
+use dlds\payment\services\payment\Form;
+use dlds\payment\services\payment\Transaction;
+use dlds\payment\services\Payment;
+use dlds\payment\widgets\PaymentWidget;
 use yii\helpers\Html;
 
 /**
@@ -67,7 +67,7 @@ class PaymentButtons extends PaymentWidget
     }
 
     /**
-     * @param \opus\payment\services\Payment $service
+     * @param \dlds\payment\services\Payment $service
      * @return PaymentButtons
      */
     public function setService(Payment $service)
@@ -77,7 +77,7 @@ class PaymentButtons extends PaymentWidget
     }
 
     /**
-     * @param \opus\payment\services\payment\Transaction $transaction
+     * @param \dlds\payment\services\payment\Transaction $transaction
      * @return PaymentButtons
      */
     public function setTransaction(Transaction $transaction)

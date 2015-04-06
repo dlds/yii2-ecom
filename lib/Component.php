@@ -8,7 +8,7 @@
 namespace dlds\ecom;
 
 use dlds\ecom\models\OrderInterface;
-use opus\payment\services\payment\Transaction;
+use dlds\payment\services\payment\Transaction;
 
 /**
  * This is the main class of the dlds\ecom component that should be registered as an application component.
