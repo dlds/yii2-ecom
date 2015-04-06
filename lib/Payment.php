@@ -5,10 +5,10 @@
  * @date 24.01.14
  */
 
-namespace dlds\shop;
+namespace dlds\ecom;
 
-use dlds\shop\models\OrderInterface;
-use dlds\shop\widgets\PaymentButtons;
+use dlds\ecom\models\OrderInterface;
+use dlds\ecom\widgets\PaymentButtons;
 use opus\payment\PaymentHandlerBase;
 use opus\payment\services\payment\Response;
 use opus\payment\services\payment\Transaction;
@@ -19,7 +19,7 @@ use yii\helpers\ArrayHelper;
  * This class adds some convenience functionality to the \opus\payment component
  *
  * @author Ivo Kund <ivo@opus.ee>
- * @package dlds\shop
+ * @package dlds\ecom
  *
  * @property \opus\payment\services\Payment $service
  */
@@ -39,7 +39,7 @@ class Payment extends PaymentHandlerBase
      *
      * @var string
      */
-    public $widgetClass = 'dlds\shop\widgets\PaymentButtons';
+    public $widgetClass = 'dlds\ecom\widgets\PaymentButtons';
     /**
      * @var array Shorthand configuration param for return URL. Will override $this->params['common']['returnRoute']
      */
@@ -94,7 +94,7 @@ class Payment extends PaymentHandlerBase
     }
 
     /**
-     * Creates a new transaction based on an order. Also calls dlds\shop\Component::finalizeTransaction
+     * Creates a new transaction based on an order. Also calls dlds\ecom\Component::finalizeTransaction
      *
      * @param OrderInterface $order
      * @return Transaction

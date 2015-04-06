@@ -5,15 +5,15 @@
  * @date 4.02.14
  */
 
-namespace dlds\shop\models;
+namespace dlds\ecom\models;
 
-use dlds\shop\Basket;
+use dlds\ecom\Basket;
 
 /**
  * All objects that can be added to the basket and that have any special effect to the basket or basket
  * price (e.g. discounts) should implement this interface
  *
- * @package dlds\shop\models
+ * @package dlds\ecom\models
  */
 interface BasketDiscountInterface extends BasketItemInterface
 {

@@ -1,7 +1,7 @@
 E-commerce extension for Yii2
 =========
-Provides support for basic e-commerce operations as a wrapper for [opus-online/yii2-payment](https://github.com/opus-online/yii2-payment). 
-For usage examples see [opus-online/yii2-app-ecom](https://github.com/opus-online/yii2-app-ecom) - a sample application using this extension. This guide assumes that you are familiar with implementations of Estonian bank payments (see [pangalink.net](http://pangalink.net))
+Provides support for basic e-commerce operations as a wrapper for [dlds/yii2-payment](https://github.com/dlds/yii2-payment). 
+For usage examples see [dlds/yii2-app-ecom](https://github.com/dlds/yii2-app-ecom) - a sample application using this extension. This guide assumes that you are familiar with implementations of Estonian bank payments (see [pangalink.net](http://pangalink.net))
 
 Main features:
 - Extensible code, almost everything can be customized
@@ -17,7 +17,7 @@ You can install this package using composer. In your `composer.json` add the fol
 ```json
 {
 	"require": {
-			"opus-online/yii2-ecom": "*"
+			"dlds/yii2-ecom": "*"
 	}
 }
 ```

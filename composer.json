@@ -1,23 +1,27 @@
 {
-	"name": "opus-online/yii2-ecom",
-	"description": "E-commerce extension for Yii2",
-	"minimum-stability": "dev",
-	"type": "yii2-extension",
-	"license": "proprietary",
-	"authors": [
-		{
-			"name": "Ivo Kund",
-			"email": "ivo@opus.ee"
-		}
-	],
-	"require": {
-		"php": ">=5.4.0",
-		"yiisoft/yii2": "*",
-		"opus-online/yii2-payment": "*"
-	},
-	"autoload": {
-		"psr-4": {
-			"opus\\ecom\\": "lib/"
-		}
-	}
+    "name": "dlds/yii2-ecom",
+    "description": "E-commerce extension for Yii2",
+    "minimum-stability": "dev",
+    "type": "yii2-extension",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jiri Svoboda",
+            "email": "jiri.svoboda@dlds.cz"
+        },
+        {
+            "name": "Ivo Kund",
+            "email": "ivo@opus.ee"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "opus-online/yii2-payment": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "dlds\\ecom\\": "lib/"
+        }
+    }
 }

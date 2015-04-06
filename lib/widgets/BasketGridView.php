@@ -5,9 +5,9 @@
  * @date 23.01.14
  */
 
-namespace dlds\shop\widgets;
+namespace dlds\ecom\widgets;
 
-use dlds\shop\Basket;
+use dlds\ecom\Basket;
 use yii\data\ArrayDataProvider;
 use Yii;
 
@@ -15,7 +15,7 @@ use Yii;
  * Class BasketGridView. Provides the default data provider with no pagination and all basket models
  *
  * @author Ivo Kund <ivo@opus.ee>
- * @package dlds\shop\widgets
+ * @package dlds\ecom\widgets
  */
 class BasketGridView extends GridView
 {

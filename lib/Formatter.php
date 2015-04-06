@@ -5,13 +5,13 @@
  * @date 23.01.14
  */
 
-namespace dlds\shop;
+namespace dlds\ecom;
 
 /**
- * Provides formatting functionality for dlds\shop package
+ * Provides formatting functionality for dlds\ecom package
  *
  * @author Ivo Kund <ivo@opus.ee>
- * @package dlds\shop
+ * @package dlds\ecom
  */
 class Formatter extends \yii\i18n\Formatter
 {

@@ -5,11 +5,11 @@
  * @date 24.01.14
  */
 
-namespace dlds\shop\widgets;
+namespace dlds\ecom\widgets;
 
-use dlds\shop\assets\PayAssetBundle;
-use dlds\shop\models\OrderInterface;
-use dlds\shop\SubComponentTrait;
+use dlds\ecom\assets\PayAssetBundle;
+use dlds\ecom\models\OrderInterface;
+use dlds\ecom\SubComponentTrait;
 use opus\payment\services\payment\Form;
 use opus\payment\services\payment\Transaction;
 use opus\payment\services\Payment;
@@ -20,7 +20,7 @@ use yii\helpers\Html;
  * Class PaymentWidget
  *
  * @author Ivo Kund <ivo@opus.ee>
- * @package dlds\shop\widgets
+ * @package dlds\ecom\widgets
  *
  * @property OrderInterface order
  * @property Payment service
@@ -57,7 +57,7 @@ class PaymentButtons extends PaymentWidget
     }
 
     /**
-     * @param \dlds\shop\models\OrderInterface $order
+     * @param \dlds\ecom\models\OrderInterface $order
      * @return PaymentButtons
      */
     public function setOrder(OrderInterface $order)

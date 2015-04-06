@@ -5,12 +5,12 @@
  * @date 4.02.14
  */
 
-namespace dlds\shop\models;
+namespace dlds\ecom\models;
 
 /**
  * All objects that can be added to the basket must implement this interface
  *
- * @package dlds\shop\models
+ * @package dlds\ecom\models
  */
 interface BasketItemInterface extends \Serializable
 {

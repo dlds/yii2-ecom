@@ -260,16 +260,16 @@
             "time": "2013-11-30 08:25:19"
         },
         {
-            "name": "opus-online/yii2-payment",
+            "name": "dlds/yii2-payment",
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/opus-online/yii2-payment.git",
+                "url": "https://github.com/dlds/yii2-payment.git",
                 "reference": "f47861d2dffec0c361d988d4fed0f7bf0256ed68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opus-online/yii2-payment/zipball/f47861d2dffec0c361d988d4fed0f7bf0256ed68",
+                "url": "https://api.github.com/repos/dlds/yii2-payment/zipball/f47861d2dffec0c361d988d4fed0f7bf0256ed68",
                 "reference": "f47861d2dffec0c361d988d4fed0f7bf0256ed68",
                 "shasum": ""
             },
