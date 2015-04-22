@@ -21,6 +21,6 @@ class Formatter extends \yii\i18n\Formatter
      */
     public function asPrice($value)
     {
-        return $this->format($value / 100, 'currency');
+        return \Yii::$app->formatter->asCurrency($value);
     }
 }
