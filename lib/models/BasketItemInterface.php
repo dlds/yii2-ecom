@@ -12,8 +12,8 @@ namespace dlds\ecom\models;
  *
  * @package dlds\ecom\models
  */
-interface BasketItemInterface extends \Serializable
-{
+interface BasketItemInterface extends \Serializable {
+
     /**
      * Returns the label for the basket item (displayed in basket etc)
      *
@@ -57,4 +57,23 @@ interface BasketItemInterface extends \Serializable
      * @return string
      */
     public function getPKValue();
+
+    /**
+     * Retrieves Basket Item type
+     *
+     * @return string
+     */
+    public function getType();
+
+    /**
+     * Adds quantity of product (if quantity is < 0 it will subtract the quantity)
+     * @param int $quantity
+     */
+    public function addQuantity($quantity);
+
+    /**
+     * Gets quantity of product
+     * @return int quantity of product
+     */
+    public function getQuantity();
 }

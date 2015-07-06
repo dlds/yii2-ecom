@@ -23,13 +23,12 @@ use yii\web\Session;
  * @property int $count
  * @property Session $session
  */
-class Basket extends Component
-{
+class Basket extends Component {
+
     const ITEM_PRODUCT = '\dlds\ecom\models\BasketProductInterface';
     const ITEM_DISCOUNT = '\dlds\ecom\models\BasketDiscountInterface';
 
     use SubComponentTrait;
-
     /**
      * @var BasketItemInterface[]
      */
@@ -39,6 +38,7 @@ class Basket extends Component
      * @var Session
      */
     private $session;
+
     /**
      * Override this to provide custom (e.g. database) storage for basket data
      *
@@ -92,11 +92,14 @@ class Basket extends Component
      */
     public function createOrder(OrderInterface $order, $clear = true)
     {
-        try {
+        try
+        {
             $order->saveFromBasket($this);
             $clear && $this->clear();
             return $order;
-        } catch (\Exception $exception) {
+        }
+        catch (\Exception $exception)
+        {
             throw $exception;
         }
     }
@@ -121,8 +124,34 @@ class Basket extends Component
      */
     protected function addItem(BasketItemInterface $item)
     {
-        $uniqueId = md5(uniqid('_bs', true));
-        $this->items[$uniqueId] = $item;
+        $id = $this->getItemId($item);
+
+        if (isset($this->items[$id]))
+        {
+            $this->items[$id]->addQuantity($item->getQuantity());
+        }
+        else
+        {
+            $this->items[$id] = $item;
+        }
+
+        if ($this->items[$id]->getQuantity() < 1)
+        {
+            $this->remove($id);
+        }
+    }
+
+    /**
+     * Get an item from the basket
+     *
+     * @param models\BasketItemInterface $element
+     * @return $this
+     */
+    public function get(BasketItemInterface $item)
+    {
+        $id = $this->getItemId($item);
+
+        return isset($this->items[$id]) ? $this->items[$id] : null;
     }
 
     /**
@@ -133,12 +162,15 @@ class Basket extends Component
      * @throws \yii\base\InvalidParamException
      * @return $this
      */
-    public function remove($uniqueId, $save = true)
+    public function remove(BasketItemInterface $item, $save = true)
     {
-        if (!isset($this->items[$uniqueId])) {
+        $id = $this->getItemId($item);
+
+        if (!isset($this->items[$id]))
+        {
             throw new InvalidParamException('Item not found');
         }
-        unset($this->items[$uniqueId]);
+        unset($this->items[$id]);
 
         $save && $this->storage->save($this);
         return $this;
@@ -162,13 +194,14 @@ class Basket extends Component
     public function getItems($itemType = null)
     {
         $items = $this->items;
-        if (!is_null($itemType)) {
-            $items = array_filter($items,
-                function ($item) use ($itemType) {
-                    /** @var $item BasketItemInterface */
-                    return is_subclass_of($item, $itemType);
-                });
+        if (!is_null($itemType))
+        {
+            $items = array_filter($items, function ($item) use ($itemType) {
+                /** @var $item BasketItemInterface */
+                return is_subclass_of($item, $itemType);
+            });
         }
+
         return $items;
     }
 
@@ -198,7 +231,8 @@ class Basket extends Component
     public function getAttributeTotal($attribute, $itemType = null)
     {
         $sum = 0;
-        foreach ($this->getItems($itemType) as $model) {
+        foreach ($this->getItems($itemType) as $model)
+        {
             $sum += $model->{$attribute};
         }
         return $sum;
@@ -216,7 +250,8 @@ class Basket extends Component
         $sum = $this->getAttributeTotal('totalPrice', self::ITEM_PRODUCT);
 
         // apply discounts
-        foreach ($this->getItems(self::ITEM_DISCOUNT) as $discount) {
+        foreach ($this->getItems(self::ITEM_DISCOUNT) as $discount)
+        {
             /** @var $discount BasketDiscountInterface */
             $discount->applyToBasket($this, $sum);
         }
@@ -253,6 +288,14 @@ class Basket extends Component
     }
 
     /**
+     * Retrieves item id
+     */
+    protected function getItemId(BasketItemInterface $item)
+    {
+        return md5(sprintf('%s_%s', $item->getType(), $item->getPKValue()));
+    }
+
+    /**
      * @param string $uniqueId
      * @param string $attribute
      * @param string $value
@@ -260,7 +303,8 @@ class Basket extends Component
      */
     public function update($uniqueId, $attribute, $value)
     {
-        if (!isset($this->items[$uniqueId]) || !$this->items[$uniqueId]->hasAttribute($attribute)) {
+        if (!isset($this->items[$uniqueId]) || !$this->items[$uniqueId]->hasAttribute($attribute))
+        {
             return false;
         }
 
