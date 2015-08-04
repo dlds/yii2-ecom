@@ -81,11 +81,11 @@ class BasketSummary extends \yii\base\Widget {
             $html .= Html::tag('i', '', ['class' => $this->basketIcon]);
         }
 
-        $items = $items = $this->basket->getItems($this->itemType);
+        $count = $this->basket->getCount($this->itemType);
 
-        if ($items)
+        if ($count)
         {
-            $html .= call_user_func($this->summaryText, count($items), $this->basket->getTotalDue());
+            $html .= call_user_func($this->summaryText, $count, $this->basket->getTotalDue());
         }
         else
         {
