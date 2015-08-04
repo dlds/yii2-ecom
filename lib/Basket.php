@@ -182,7 +182,16 @@ class Basket extends Component {
      */
     public function getCount($itemType = null)
     {
-        return count($this->getItems($itemType));
+        $items = $this->getItems($itemType);
+
+        $count = 0;
+
+        foreach ($items as $item)
+        {
+            $count += $item->basketQuantity;
+        }
+
+        return $count;
     }
 
     /**
