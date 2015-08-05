@@ -137,7 +137,7 @@ class Basket extends Component {
 
         if ($this->items[$id]->getQuantity() < 1)
         {
-            $this->remove($id);
+            $this->remove($item);
         }
     }
 
