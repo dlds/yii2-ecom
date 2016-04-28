@@ -70,6 +70,13 @@ class Basket extends Component {
         return $this;
     }
 
+    public function refresh()
+    {
+        $this->storage->save($this);
+
+        return $this;
+    }
+
     /**
      * Setter for the storage component
      *
